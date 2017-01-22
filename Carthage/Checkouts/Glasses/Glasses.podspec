@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Glasses"
-  s.version      = "0.0.10"
+  s.version      = "0.0.11"
   s.summary      = "A short description of Glasses."
   s.description  = "Provides pixel data for different glasses"
   s.homepage     = "http://ericcerney.com"

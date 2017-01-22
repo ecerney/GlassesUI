@@ -66,6 +66,20 @@ public enum Glasses: Int {
   public var numPixelsWidth: Int {
     return pixels.first?.count ?? 0
   }
+
+  public var eyeCenterXOffset: Float {
+    switch self {
+    case .dealWithIt: return 7
+    case .harryPotter: return 7.5
+    }
+  }
+
+  public var eyeCenterYOffset: Float {
+    switch self {
+    case .dealWithIt: return 2.5
+    case .harryPotter: return 6.0
+    }
+  }
 }
 
 
