@@ -19,6 +19,7 @@
 		02118ABB1E3440EB005ADB4E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		02118ABC1E3440F6005ADB4E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		02118ABD1E3440FD005ADB4E /* GlassesUI.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = GlassesUI.podspec; sourceTree = "<group>"; };
+		02118ABE1E3450B6005ADB4E /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +38,7 @@
 			children = (
 				02118ABB1E3440EB005ADB4E /* Package.swift */,
 				02118ABD1E3440FD005ADB4E /* GlassesUI.podspec */,
+				02118ABE1E3450B6005ADB4E /* Cartfile */,
 				02118ABC1E3440F6005ADB4E /* README.md */,
 				02118AAF1E344018005ADB4E /* Sources */,
 				02118AAE1E344018005ADB4E /* Products */,
