@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02118AB21E344019005ADB4E /* GlassesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 02118AB01E344018005ADB4E /* GlassesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02118ABA1E3440C7005ADB4E /* GlassesUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02118AB91E3440C7005ADB4E /* GlassesUI.swift */; };
+		021FB29C1E34717100595D0F /* Glasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021FB29B1E34717100595D0F /* Glasses.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		02118ABC1E3440F6005ADB4E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		02118ABD1E3440FD005ADB4E /* GlassesUI.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = GlassesUI.podspec; sourceTree = "<group>"; };
 		02118ABE1E3450B6005ADB4E /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		021FB29B1E34717100595D0F /* Glasses.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Glasses.framework; path = Carthage/Build/iOS/Glasses.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021FB29C1E34717100595D0F /* Glasses.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 				02118ABC1E3440F6005ADB4E /* README.md */,
 				02118AAF1E344018005ADB4E /* Sources */,
 				02118AAE1E344018005ADB4E /* Products */,
+				021FB29A1E34717100595D0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +65,14 @@
 				02118AB91E3440C7005ADB4E /* GlassesUI.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		021FB29A1E34717100595D0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				021FB29B1E34717100595D0F /* Glasses.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +272,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -281,6 +297,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

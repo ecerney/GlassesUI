@@ -21,6 +21,7 @@
  */
 
 import UIKit
+import Glasses
 
 public class GlassesUI: UIView {
   public enum PixelColor: Int {
@@ -35,42 +36,36 @@ public class GlassesUI: UIView {
     }
   }
 
-  public var pixels = [[Int]]()
-
-  public var numPixelsHeight: Int {
-    return pixels.count
-  }
-
-  public var numPixelsWidth: Int {
-    return pixels.first?.count ?? 0
+  public var glasses: Glasses = .dealWithIt {
+    didSet {
+      setNeedsDisplay()
+    }
   }
 
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
 
-  public init(pixels: [[Int]], origin: CGPoint, width: CGFloat) {
-    self.pixels = pixels
-    let pixelHeight = pixels.count
-    let pixelWidth = pixels.first?.count ?? 0
-    let height = width * CGFloat(pixelHeight) / CGFloat(pixelWidth)
+  public init(glasses: Glasses, origin: CGPoint, width: CGFloat) {
+    self.glasses = glasses
+    let height = width * CGFloat(glasses.numPixelsHeight) / CGFloat(glasses.numPixelsWidth)
     super.init(frame: CGRect(x: origin.x, y: origin.y, width: width, height: height))
     backgroundColor = .clear
   }
 
-  public convenience init(pixels: [[Int]], width: CGFloat) {
-    self.init(pixels: pixels, origin: .zero, width: width)
+  public convenience init(width: CGFloat) {
+    self.init(glasses: .dealWithIt, origin: .zero, width: width)
   }
 
   override public func draw(_ rect: CGRect) {
     guard let context = UIGraphicsGetCurrentContext() else { return }
 
-    let pixelWidth = rect.width / CGFloat(numPixelsWidth)
+    let pixelWidth = rect.width / CGFloat(glasses.numPixelsWidth)
 
-    let xOffset: CGFloat = floor((rect.width - pixelWidth * CGFloat(numPixelsWidth)) / 2.0)
-    let yOffset: CGFloat = floor((rect.height - pixelWidth * CGFloat(numPixelsHeight)) / 2.0)
+    let xOffset: CGFloat = floor((rect.width - pixelWidth * CGFloat(glasses.numPixelsWidth)) / 2.0)
+    let yOffset: CGFloat = floor((rect.height - pixelWidth * CGFloat(glasses.numPixelsHeight)) / 2.0)
 
-    for (y, pixelRow) in pixels.enumerated() {
+    for (y, pixelRow) in glasses.pixels.enumerated() {
       for (x, pixel) in pixelRow.enumerated() {
         if let pixelColor = PixelColor(rawValue: pixel) {
           context.setFillColor(pixelColor.cgColor)
